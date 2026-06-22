@@ -1,0 +1,748 @@
+/* --- 1. Global Variables & Base Styles (Dark Mode) --- */
+:root {
+    --bg-color: #1f242d; /* Dark background */
+    --second-bg-color: #323946; /* Slightly lighter dark for sections */
+    --text-color: #ededed; /* Light text */
+    --main-color: #0ef; /* Cyan accent color */
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+html {
+    font-size: 62.5%; /* Base font size for easy scaling (1rem = 10px) */
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif; /* Use a common font */
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* --- 2. Header & Navbar --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* Hamburger Icon styling (hidden on desktop) */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hide by default */
+}
+
+/* --- 3. Home Section --- */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+.home-img img {
+    width: 35vw;
+    border-radius: 50%;
+    border: .5rem solid var(--main-color);
+}
+
+/* --- 4. Section Headings & About --- */
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.about {
+    background: var(--second-bg-color);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- 5. Skills Section --- */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skill-box {
+    flex: 1 1 20rem; /* Flex basis for responsiveness */
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.skill-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.05);
+}
+
+.skill-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.skill-box h3 {
+    font-size: 2.6rem;
+    margin-top: 1.5rem;
+}
+
+/* --- 6. Projects Section --- */
+.projects {
+    background: var(--bg-color);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: var(--second-bg-color);
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-info h4 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-info .tech-stack span {
+    display: inline-block;
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    font-size: 1.2rem;
+    padding: .3rem .8rem;
+    border-radius: .5rem;
+    margin-right: .5rem;
+}
+
+.project-info a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: var(--bg-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+/* --- 7. Contact Section --- */
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%; /* Makes two inputs fit side-by-side */
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.message-status {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.message-status.success {
+    color: var(--main-color); /* Greenish-cyan for success */
+}
+.message-status.error {
+    color: red;
+}
+
+
+/* --- 8. Footer --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+/* --- 9. BREAKPOINTS (Media Queries for Responsiveness) --- */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%; /* Further reduce font size on smaller desktops/large tablets */
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; /* Show hamburger icon */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none; /* Hide by default */
+        transition: .3s;
+    }
+
+    /* JavaScript will add this class to show the menu */
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 1.5rem 0;
+    }
+
+    .home {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content {
+        order: 2; /* Move text content below image on mobile */
+        text-align: center;
+    }
+
+    .home-img {
+        order: 1; /* Move image above text content on mobile */
+        margin-bottom: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw; /* Make image larger on mobile */
+    }
+
+    .contact form .input-box input {
+        width: 100%; /* Stack inputs on mobile */
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer-text {
+        margin-bottom: 1rem;
+    }
+}
+/* Update .home-img styles here */
+.home-img img {
+    width: 35vw;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%; /* Makes it circular */
+    border: .5rem solid var(--main-color);
+    box-shadow: 0 0 2rem var(--main-color); 
+    z-index: 2;
+}
+.home {
+    /* Base setup for layering */
+    position: relative; 
+    overflow: hidden; 
+    /* Keep existing flexbox/display properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://www.hdwallpapers.in/download/laptop_ultra_4k_hd_desktop_background-HD.jpg"); /* your file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.home-img {
+    position: relative;
+}
+
+.home-img img {
+    width: 280px;
+    position: relative;
+    top: -40px;       /* move image upward */
+    animation: floatPic 3s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+@keyframes floatPic {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+.about {
+    background-image: url("https://4kwallpapers.com/images/wallpapers/hacker-hacking-3840x2160-15637.jpeg"); /* change file name */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px; /* spacing so text looks good */
+    border-radius: 10px; /* optional */
+    position: relative;
+}
+
+.skills {
+    background-image: url("https://wallpapers.com/images/featured/jarvis-4k-uq5wcdpkptqldngc.jpg"); /* change name */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    position: relative;
+    border-radius: 10px;
+}
+.transparent-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.project-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3; /* controls transparency */
+}
+
+.project-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover entire box */
+}
+
+.project-info {
+    position: relative;
+    z-index: 2; /* text stays above the image */
+}
+.transparent-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    min-height: 200px; /* ensures box has enough height */
+}
+
+.project-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3; /* controls transparency */
+}
+
+.project-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover the box nicely */
+}
+
+.project-info {
+    position: relative;
+    z-index: 2; /* text stays above the image */
+}
+.transparent-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.project-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3; /* transparency of image */
+}
+
+.project-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    position: relative;
+    z-index: 2; /* keeps text above image */
+}
+.profile-photo {
+    width: 250px;         /* adjust width */
+    height: 180px;        /* adjust height to make oval */
+    object-fit: cover;    /* crop nicely without stretching */
+    border-radius: 50% / 30%;  /* makes it oval */
+    border: 3px solid #fff;    /* optional border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* optional shadow */
+}
+.profile-photo {
+    width: 250px;         /* adjust width */
+    height: 180px;        /* adjust height to make oval */
+    object-fit: cover;    /* crop nicely without stretching */
+    border-radius: 50% / 30%;  /* makes it oval */
+    border: 3px solid #fff;    /* optional border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* optional shadow */
+}
+/* Home Section Typing */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+}
+
+.hello-text {
+    font-size: 42px;
+    
+    font-weight: bold;
+    
+}
+
+.typing-container {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+}
+
+.cursor {
+    width: 3px;
+    background-color: #fff;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.botao {
+  width: 125px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+
+  box-shadow: 1px 1px rgba(107, 221, 215, 0.37);
+  padding: 5px 10px;
+
+  background-color: rgb(59, 190, 230);
+  color: #fff;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  filter: drop-shadow(0 0 10px rgba(59, 190, 230, 0.568));
+  transition: all 0.4s ease;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative; /* IMPORTANT for before/after */
+  overflow: hidden;   /* keeps animation inside button */
+}
+
+/* SVG hidden initially */
+.botao .mysvg {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+/* Hover effect - morph to circle */
+.botao:hover {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  transition: all 0.4s ease;
+
+  padding: 0;
+}
+
+/* Hide text on hover */
+.botao:hover .texto {
+  display: none;
+}
+
+/* Show icon on hover */
+.botao:hover .mysvg {
+  display: inline-block;
+}
+
+/* Spinner effect (outer ring) */
+.botao:hover::before {
+  content: "";
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border: 3px solid transparent;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+/* small moving bar animation */
+.botao:hover::after {
+  content: "";
+  position: absolute;
+
+  width: 14px;
+  height: 3px;
+
+  background-color: #fff;
+
+  bottom: 6px;
+
+  animation: bounce 0.8s linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}
